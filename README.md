@@ -22,5 +22,8 @@ epoch is a single iteration for one training input.
 @param epochCount, number of iterations of training    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;network.train(INPUTS, epoch);  
 
+##### Version
 
+1.0
+* Neural Network class with builder pattern
 
