@@ -10,5 +10,5 @@ Nodejs
 NeuralNetwork network = new NeuralNetwork.Builder()  
 				.inputs(2)  
 				.hidden(3)  
-				.output(1) 
+				.output(1)  
 				.build(); 
