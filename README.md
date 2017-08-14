@@ -20,7 +20,7 @@ epoch is a single iteration for one training input.
  
 @param INPUTS, a list of inputs  
 @param epochCount, number of iterations of training    
-network.train(INPUTS, epoch);  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;network.train(INPUTS, epoch);  
 
 
 
