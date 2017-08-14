@@ -9,10 +9,10 @@ Nodejs
 
 NeuralNetwork network = new NeuralNetwork.Builder()  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.inputs(2)  
-.hidden(3)  
-				.output(1, ActivationFunction.SIGMOID)  
-				.activation(ActivationFunction.SIGMOID)  
-				.build();  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.hidden(3)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.output(1, ActivationFunction.SIGMOID)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.activation(ActivationFunction.SIGMOID)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.build();  
 
 #### Train the network
 
