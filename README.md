@@ -17,12 +17,9 @@ NeuralNetwork network = new NeuralNetwork.Builder()
 #### Train the network
 
 epoch is a single iteration for one training input.  
-
-/**  
-*  
-* @param INPUTS, a list of inputs  
-* @param epochCount, number of iterations of training  
-*/  
+ 
+@param INPUTS, a list of inputs  
+@param epochCount, number of iterations of training    
 network.train(INPUTS, epoch);  
 
 
