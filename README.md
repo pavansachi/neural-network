@@ -7,8 +7,8 @@ Nodejs
 
 ### Usage
 
-NeuralNetwork network = new NeuralNetwork.Builder()
-.inputs(2)
+NeuralNetwork network = new NeuralNetwork.Builder()  
+<space><space><space><space><space>.inputs(2)  
 .hidden(3)  
 				.output(1, ActivationFunction.SIGMOID)  
 				.activation(ActivationFunction.SIGMOID)  
