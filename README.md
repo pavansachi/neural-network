@@ -2,7 +2,7 @@
 A generic neural network training implementation
 
 ## Language
-Java
+Java  
 Nodejs
 
 ### Usage
