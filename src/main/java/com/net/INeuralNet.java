@@ -12,7 +12,7 @@ public interface INeuralNet {
 	 * @param inputs
 	 * @param output
 	 */
-	public void train (double[][] inputs, double[] output)
+	public void train (double[][] inputs, double[][] output)
 			throws NetworkException;
 	
 	/**
@@ -20,7 +20,7 @@ public interface INeuralNet {
 	 * @param inputs
 	 * @return output
 	 */
-	public double predict (double[] inputs);
+	public double[] predict (double[] inputs);
 	
 	/**
 	 * Print the model

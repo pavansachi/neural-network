@@ -16,11 +16,11 @@ public class IrisDriver {
 				.inputs(4)
 				.outputs(1, MathFunction.step)
 				.learningRate(0.02)
-				.iterations(100)
+				.iterations(1000)
 				.build();
 
-		double[][] inputs = new double[100][4];
-		double[] outputs = new double[100];
+		double[][] inputs = new double[50][4];
+		double[][] outputs = new double[50][1];
 
 		String line = null;
 
@@ -38,13 +38,12 @@ public class IrisDriver {
 						Double.valueOf(data[3])
 				};
 
-				double output = Double.valueOf(data[4]);
+				double[] output = { 
+					Double.valueOf(data[4]) 
+				};
 
-				if (output == 0 || output == 1) {
-
-					inputs[idx] = input;
-					outputs[idx] = output;
-				}
+				inputs[idx] = input;
+				outputs[idx] = output;
 
 				idx++;
 			}

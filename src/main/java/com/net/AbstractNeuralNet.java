@@ -36,8 +36,8 @@ public abstract class AbstractNeuralNet implements INeuralNet {
 		System.out.println(outputLayer);
 	}
 
-	public abstract double calcOutput(double[] inputs);
-	public abstract double calcError(double realoutput, double calcOutput);
+	public abstract double[] calcOutput(double[] inputs);
+	public abstract double calcError(double[] realoutput, double[] calcOutput);
 	public abstract void adjustWeights(double error);
 
 }
