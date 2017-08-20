@@ -1,6 +1,7 @@
 package com.net.impl;
 
 import java.util.Iterator;
+import java.util.function.Function;
 
 import com.net.AbstractNeuralNet;
 import com.net.NetworkException;
@@ -20,6 +21,7 @@ public class NeuralNetwork extends AbstractNeuralNet {
 	private int numInputs;
 	private int numOutputs;
 	private int numIterations;
+	private Function outputActivation;
 
 	public static class Builder {
 
@@ -27,6 +29,7 @@ public class NeuralNetwork extends AbstractNeuralNet {
 		private int outputs;
 		private double learningRate;
 		private int numIterations;
+		private Function outputActivation;
 		
 		public Builder inputs(int n) {
 
@@ -34,9 +37,10 @@ public class NeuralNetwork extends AbstractNeuralNet {
 			return this;
 		}
 
-		public Builder outputs(int n) {
+		public Builder outputs(int n, Function outputActivation) {
 
 			this.outputs = n;
+			this.outputActivation = outputActivation;
 			return this;
 		}
 		
@@ -57,7 +61,8 @@ public class NeuralNetwork extends AbstractNeuralNet {
 			return new NeuralNetwork(this.inputs,
 					this.outputs,
 					this.learningRate,
-					this.numIterations);
+					this.numIterations,
+					this.outputActivation);
 		}
 
 	}
@@ -67,12 +72,13 @@ public class NeuralNetwork extends AbstractNeuralNet {
 	}
 
 	private NeuralNetwork(int numInputs, int numOutputs, double learningRate, 
-			int numIterations) {
+			int numIterations, Function function) {
 
 		this.numInputs = numInputs;
 		this.numOutputs = numOutputs;
 		this.learningRate = learningRate;
 		this.numIterations = numIterations;
+		this.outputActivation = function;
 
 		addNodes(inputLayer, numInputs);
 		addNeurons(outputLayer, numOutputs);
@@ -142,7 +148,7 @@ public class NeuralNetwork extends AbstractNeuralNet {
 
 		// output layer
 		for (Neuron neuron: outputLayer.getNeurons()) {
-			neuron.calcOutput(MathFunction.step);
+			neuron.calcOutput(outputActivation);
 		}
 
 		for (Neuron neuron: outputLayer.getNeurons()) {

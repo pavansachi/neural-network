@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import com.net.NetworkException;
 import com.net.impl.NeuralNetwork;
+import com.util.MathFunction;
 
 public class NeuronTest {
 
@@ -23,7 +24,7 @@ public class NeuronTest {
 
 		NeuralNetwork orNetWork = new NeuralNetwork.Builder()
 				.inputs(2)
-				.outputs(1)
+				.outputs(1, MathFunction.step)
 				.learningRate(0.02)
 				.iterations(100)
 				.build();
@@ -53,7 +54,7 @@ public class NeuronTest {
 
 		NeuralNetwork orNetWork = new NeuralNetwork.Builder()
 				.inputs(2)
-				.outputs(1)
+				.outputs(1, MathFunction.step)
 				.learningRate(0.02)
 				.iterations(100)
 				.build();
@@ -79,7 +80,7 @@ public class NeuronTest {
 
 		NeuralNetwork orNetWork = new NeuralNetwork.Builder()
 				.inputs(3)
-				.outputs(1)
+				.outputs(1, MathFunction.step)
 				.learningRate(0.02)
 				.iterations(100)
 				.build();

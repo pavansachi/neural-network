@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import com.net.NetworkException;
 import com.net.impl.NeuralNetwork;
+import com.util.MathFunction;
 
 public class IrisDriver {
 
@@ -13,7 +14,7 @@ public class IrisDriver {
 
 		NeuralNetwork net = new NeuralNetwork.Builder()
 				.inputs(4)
-				.outputs(1)
+				.outputs(1, MathFunction.step)
 				.learningRate(0.02)
 				.iterations(100)
 				.build();
