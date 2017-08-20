@@ -1,5 +1,8 @@
 package com.net;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.net.model.NeuralLayer;
 import com.net.model.Neuron;
 import com.net.model.Node;
@@ -13,6 +16,7 @@ public abstract class AbstractNeuralNet implements INeuralNet {
 
 	public NeuralLayer<Node> inputLayer = new NeuralLayer<Node>(NeuralLayer.INPUT_LAYER);
 	public NeuralLayer<Neuron> outputLayer = new NeuralLayer<Neuron>(NeuralLayer.OUTPUT_LAYER);
+	public List<NeuralLayer<Neuron>> hiddenLayers = new ArrayList<>();
 
 	public void addNodes (NeuralLayer<Node> layer, int count) {
 
@@ -28,6 +32,11 @@ public abstract class AbstractNeuralNet implements INeuralNet {
 
 			layer.addNeuron(new Neuron());
 		}
+	}
+	
+	public void addHiddenLayer (NeuralLayer<Neuron> layer) {
+
+		this.addHiddenLayer(layer);
 	}
 	
 	@Override

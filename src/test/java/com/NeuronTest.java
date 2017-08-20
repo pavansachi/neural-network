@@ -32,7 +32,8 @@ public class NeuronTest {
 
 		NeuralNetwork orNetWork = new NeuralNetwork.Builder()
 				.inputs(2)
-				.outputs(1, MathFunction.step)
+				.outputs(1)
+				.activationFunction(MathFunction.step)
 				.learningRate(0.02)
 				.iterations(100)
 				.build();
@@ -62,7 +63,8 @@ public class NeuronTest {
 
 		NeuralNetwork andNetWork = new NeuralNetwork.Builder()
 				.inputs(2)
-				.outputs(1, MathFunction.step)
+				.outputs(1)
+				.activationFunction(MathFunction.step)
 				.learningRate(0.02)
 				.iterations(100)
 				.build();
@@ -92,7 +94,8 @@ public class NeuronTest {
 
 		NeuralNetwork net = new NeuralNetwork.Builder()
 				.inputs(4)
-				.outputs(1, MathFunction.step)
+				.outputs(1)
+				.activationFunction(MathFunction.step)
 				.learningRate(0.02)
 				.iterations(10000)
 				.build();
@@ -152,7 +155,8 @@ public class NeuronTest {
 
 		NeuralNetwork orNetWork = new NeuralNetwork.Builder()
 				.inputs(2)
-				.outputs(1, MathFunction.step)
+				.outputs(1)
+				.activationFunction(MathFunction.step)
 				.learningRate(0.02)
 				.iterations(100)
 				.build();

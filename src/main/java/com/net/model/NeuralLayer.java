@@ -15,6 +15,7 @@ public class NeuralLayer<T> {
 
 	public static final String INPUT_LAYER = "Input Layer";
 	public static final String OUTPUT_LAYER = "Output Layer";
+	public static final String HIDDEN_LAYER = "Hidden Layer";
 	
 	public NeuralLayer() {
 

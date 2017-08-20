@@ -35,9 +35,14 @@ public class NeuralNetwork extends AbstractNeuralNet {
 			return this;
 		}
 
-		public Builder outputs(int n, Function<Double, Double> outputActivation) {
+		public Builder outputs(int n) {
 
 			this.outputs = n;
+			return this;
+		}
+		
+		public Builder activationFunction(Function<Double, Double> outputActivation) {
+
 			this.outputActivation = outputActivation;
 			return this;
 		}
@@ -70,13 +75,13 @@ public class NeuralNetwork extends AbstractNeuralNet {
 	}
 
 	private NeuralNetwork(int numInputs, int numOutputs, double learningRate, 
-			int numIterations, Function<Double, Double> function) {
+			int numIterations, Function<Double, Double> outputActivation) {
 
 		this.numInputs = numInputs;
 		this.numOutputs = numOutputs;
 		this.learningRate = learningRate;
 		this.numIterations = numIterations;
-		this.outputActivation = function;
+		this.outputActivation = outputActivation;
 
 		addNodes(inputLayer, numInputs);
 		addNeurons(outputLayer, numOutputs);
@@ -140,15 +145,6 @@ public class NeuralNetwork extends AbstractNeuralNet {
 			node.setInput(inputs[i]);
 		}
 		
-//		Iterator<Node> iterator = inputLayer.getNodes().iterator();
-//
-//		for (double input: inputs) {
-//
-//			Node node = iterator.next();
-//			node.setInput(input);
-//
-//		}
-
 		// output layer
 		for (Neuron neuron: outputLayer.getNeurons()) {
 			neuron.calcOutput(outputActivation);

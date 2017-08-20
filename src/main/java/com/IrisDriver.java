@@ -14,7 +14,8 @@ public class IrisDriver {
 
 		NeuralNetwork net = new NeuralNetwork.Builder()
 				.inputs(4)
-				.outputs(1, MathFunction.step)
+				.outputs(1)
+				.activationFunction(MathFunction.step)
 				.learningRate(0.02)
 				.iterations(1000)
 				.build();
