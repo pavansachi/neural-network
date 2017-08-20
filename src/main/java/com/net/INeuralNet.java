@@ -12,7 +12,8 @@ public interface INeuralNet {
 	 * @param inputs
 	 * @param output
 	 */
-	public void train (double[][] inputs, double[] output);
+	public void train (double[][] inputs, double[] output)
+			throws NetworkException;
 	
 	/**
 	 * Predict using the trained model
