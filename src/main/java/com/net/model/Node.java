@@ -1,5 +1,10 @@
 package com.net.model;
 
+/**
+ * Node
+ * @author pavansachi
+ *
+ */
 public class Node {
 
 	private double input;

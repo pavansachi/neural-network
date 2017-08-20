@@ -1,5 +1,10 @@
 package com.net.model;
 
+/**
+ * Neural connection with random weights
+ * @author pavansachi
+ *
+ */
 public class Connection {
 
 	@Override

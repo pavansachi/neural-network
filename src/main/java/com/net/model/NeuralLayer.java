@@ -3,6 +3,14 @@ package com.net.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.util.MathFunction;
+
+/**
+ * Neural layer
+ * @author pavansachi
+ *
+ * @param <T>
+ */
 public class NeuralLayer<T> {
 
 	public static final String INPUT_LAYER = "Input Layer";
@@ -49,7 +57,7 @@ public class NeuralLayer<T> {
 
 				for (Node node: this.nodes) {
 
-					neuron.addConnection(node, 0.5);
+					neuron.addConnection(node, MathFunction.random());
 				}
 
 			}

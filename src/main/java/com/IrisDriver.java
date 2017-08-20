@@ -4,13 +4,13 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import com.net.impl.FeedForwardNetwork;
+import com.net.impl.NeuralNetwork;
 
 public class IrisDriver {
 
 	public static void main(String[] args) throws IOException {
 
-		FeedForwardNetwork net = new FeedForwardNetwork(4, 1);
+		NeuralNetwork net = new NeuralNetwork(4, 1, 0.02);
 
 		double[][] inputs = new double[100][4];
 		double[] outputs = new double[100];

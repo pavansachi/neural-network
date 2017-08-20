@@ -8,15 +8,24 @@ import com.net.model.Neuron;
 import com.net.model.Node;
 import com.util.MathFunction;
 
-public class FeedForwardNetwork extends AbstractNeuralNet {
+/**
+ * Neural network
+ * @author pavansachi
+ *
+ */
+public class NeuralNetwork extends AbstractNeuralNet {
 
-	public FeedForwardNetwork(int numInputs, int numOutputs) {
+	private double learningRate;
+	
+	public NeuralNetwork(int numInputs, int numOutputs, double learningRate) {
 
 		addNodes(inputLayer, numInputs);
 
 		addNeurons(outputLayer, numOutputs);
 
 		inputLayer.connect(outputLayer);
+		
+		this.learningRate = learningRate;
 	}
 
 	@Override
@@ -100,7 +109,7 @@ public class FeedForwardNetwork extends AbstractNeuralNet {
 
 					Node node = conn.getNode();
 
-					conn.setWeight(conn.getWeight() + (error * 0.02 * node.getInput()));
+					conn.setWeight(conn.getWeight() + (error * learningRate * node.getInput()));
 				}
 
 				if (conn.getNeuron() != null) {

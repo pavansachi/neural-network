@@ -4,6 +4,11 @@ import com.net.model.NeuralLayer;
 import com.net.model.Neuron;
 import com.net.model.Node;
 
+/***
+ * Abstract neural network
+ * @author pavansachi
+ *
+ */
 public abstract class AbstractNeuralNet implements INeuralNet {
 
 	public NeuralLayer<Node> inputLayer = new NeuralLayer<Node>(NeuralLayer.INPUT_LAYER);

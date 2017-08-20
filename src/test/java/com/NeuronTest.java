@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.net.impl.FeedForwardNetwork;
+import com.net.impl.NeuralNetwork;
 
 public class NeuronTest {
 
@@ -20,7 +20,7 @@ public class NeuronTest {
 	@Test
 	public void testPredictingOROutput() {
 
-		FeedForwardNetwork orNetWork = new FeedForwardNetwork(2, 1);
+		NeuralNetwork orNetWork = new NeuralNetwork(2, 1);
 
 		orNetWork.train(new double[][] {
 			{0, 0},
@@ -45,7 +45,7 @@ public class NeuronTest {
 	@Test
 	public void testPredictingRandomTestOutput() {
 
-		FeedForwardNetwork orNetWork = new FeedForwardNetwork(2, 1);
+		NeuralNetwork orNetWork = new NeuralNetwork(2, 1);
 
 		orNetWork.train(new double[][] {
 			{1, 0},
@@ -66,7 +66,7 @@ public class NeuronTest {
 	@Test
 	public void testPredictingRandomTestOutputForMultipleInputs() {
 
-		FeedForwardNetwork orNetWork = new FeedForwardNetwork(3, 1);
+		NeuralNetwork orNetWork = new NeuralNetwork(3, 1);
 
 		orNetWork.train(new double[][] {
 			{1, 0, 1},

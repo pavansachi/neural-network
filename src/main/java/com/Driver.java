@@ -1,12 +1,12 @@
 package com;
 
-import com.net.impl.FeedForwardNetwork;
+import com.net.impl.NeuralNetwork;
 
 public class Driver {
 
 	public static void main(String[] args) {
 
-		FeedForwardNetwork net = new FeedForwardNetwork(2, 1);
+		NeuralNetwork net = new NeuralNetwork(2, 1, 0.02);
 
 		net.train(new double[][] {
 			{0, 0},
@@ -21,7 +21,7 @@ public class Driver {
 		});
 		
 		net.predict(new double[] {
-			1, 0
+			1, 1
 		});
 		
 		net.printModel();

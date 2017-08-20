@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
+/**
+ * Neuron
+ * @author pavansachi
+ *
+ */
 public class Neuron {
 
 	private double output;
@@ -48,7 +53,7 @@ public class Neuron {
 	public void addConnection (double w, Neuron neuron) {
 
 		Connection conn = new Connection();
-		conn.setWeight(0.5);
+		conn.setWeight(w);
 		conn.setNeuron(neuron);
 		
 		this.connections.add(conn);
