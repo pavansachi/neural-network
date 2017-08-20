@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.net.NetworkException;
 import com.net.impl.NeuralNetwork;
 
 public class NeuronTest {
@@ -18,9 +19,14 @@ public class NeuronTest {
 	}
 
 	@Test
-	public void testPredictingOROutput() {
+	public void testPredictingOROutput() throws NetworkException {
 
-		NeuralNetwork orNetWork = new NeuralNetwork(2, 1);
+		NeuralNetwork orNetWork = new NeuralNetwork.Builder()
+				.inputs(2)
+				.outputs(1)
+				.learningRate(0.02)
+				.iterations(100)
+				.build();
 
 		orNetWork.train(new double[][] {
 			{0, 0},
@@ -43,9 +49,14 @@ public class NeuronTest {
 	}
 	
 	@Test
-	public void testPredictingRandomTestOutput() {
+	public void testPredictingRandomTestOutput() throws NetworkException {
 
-		NeuralNetwork orNetWork = new NeuralNetwork(2, 1);
+		NeuralNetwork orNetWork = new NeuralNetwork.Builder()
+				.inputs(2)
+				.outputs(1)
+				.learningRate(0.02)
+				.iterations(100)
+				.build();
 
 		orNetWork.train(new double[][] {
 			{1, 0},
@@ -64,10 +75,15 @@ public class NeuronTest {
 	}
 	
 	@Test
-	public void testPredictingRandomTestOutputForMultipleInputs() {
+	public void testPredictingRandomTestOutputForMultipleInputs() throws NetworkException {
 
-		NeuralNetwork orNetWork = new NeuralNetwork(3, 1);
-
+		NeuralNetwork orNetWork = new NeuralNetwork.Builder()
+				.inputs(3)
+				.outputs(1)
+				.learningRate(0.02)
+				.iterations(100)
+				.build();
+		
 		orNetWork.train(new double[][] {
 			{1, 0, 1},
 			{1, 1, 0},
